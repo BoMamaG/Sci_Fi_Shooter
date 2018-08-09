@@ -3,17 +3,24 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-    InputController inputController;
+    [System.Serializable]
+    public class MouseInput
+    {
+        public Vector2 Damping;
+        public Vector2 Sensitivity;
+    }
+    [SerializeField] float speed;
+    [SerializeField] MouseInput MouseControl;
 
-	// Use this for initialization
-	void Start () {
-        inputController = GameManager.Instance.InputController;
+    InputController playerInput;
+
+	void Awake () {
+        playerInput = GameManager.Instance.InputController;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        print("Horizontal : " + inputController.Horizontal);
-        print("Mouse: " + inputController.MouseInput);
+        Vector2 direction = new Vector2(playerInput.Vertical * speed, playerInput.Horizontal * speed);
 		
 	}
 }
