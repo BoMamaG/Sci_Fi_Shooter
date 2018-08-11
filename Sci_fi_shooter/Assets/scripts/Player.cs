@@ -24,6 +24,7 @@ public class Player : MonoBehaviour {
         }
     }
     InputController playerInput;
+    Vector2 mouseInput;
 
 	void Awake () {
         playerInput = GameManager.Instance.InputController;
@@ -34,5 +35,11 @@ public class Player : MonoBehaviour {
 	void Update () {
         Vector2 direction = new Vector2(playerInput.Vertical * speed, playerInput.Horizontal * speed);
         MoveController.Move(direction);
+
+        mouseInput.x = Mathf.Lerp(mouseInput.x, playerInput.MouseInput.x, 1f / MouseControl.Damping.x);
+
+        transform.Rotate(Vector3.up * mouseInput.x * MouseControl.Sensitivity.x);
+
+
 	}
 }

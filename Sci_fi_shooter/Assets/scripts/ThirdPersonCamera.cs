@@ -29,6 +29,9 @@ public class ThirdPersonCamera : MonoBehaviour {
             localPlayer.transform.up * cameraOffset.y + 
             localPlayer.transform.right * cameraOffset.x;
 
+        Quaternion targetRotation = Quaternion.LookRotation(cameraLookTarget.position - targetPosition, Vector3.up);
+
         transform.position = Vector3.Lerp(transform.position, targetPosition, damping * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, damping * Time.deltaTime);
 	}
 }
