@@ -25,8 +25,10 @@ public class ThirdPersonCamera : MonoBehaviour {
 
 
 	void Update () {
-        Vector3 targetPosition = cameraLookTarget.position + localPlayer.transform.forward * cameraOffset.z +
-            localPlayer.transform.up * cameraOffset.y +
+        Vector3 targetPosition = cameraLookTarget.position + localPlayer.transform.forward * cameraOffset.z + 
+            localPlayer.transform.up * cameraOffset.y + 
             localPlayer.transform.right * cameraOffset.x;
+
+        transform.position = Vector3.Lerp(transform.position, targetPosition, damping * Time.deltaTime);
 	}
 }
