@@ -4,13 +4,33 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] float rateOfFire;
+    [SerializeField] Projectile projectile;
+
+    [HideInInspector]
+    public Transform muzzle;
+    float nextFireAllowed;
+    public bool canFire;
+
+    void Awake()
+    {
+        muzzle = transform.Find("muzzle");
+    }
+
+    public virtual void Fire()
+    {
+   
+        canFire = false;
+
+        if (Time.time < nextFireAllowed)
+            return;
+
+        nextFireAllowed = Time.time + rateOfFire;
+
+        // instantiate the projecttile;
+        Instantiate(projectile, muzzle.position, muzzle.rotation);
+        
+        canFire = true;
+    }
+
 }

@@ -7,7 +7,7 @@ public class ThirdPersonCamera : MonoBehaviour {
     [SerializeField] float damping;
 
     Transform cameraLookTarget;
-    Player localPlayer;
+        Player localPlayer;
 
 	void Awake () {
         GameManager.Instance.OnLocalPlayerJoined += HandleOnLocalPlayerJoined;;
@@ -24,7 +24,7 @@ public class ThirdPersonCamera : MonoBehaviour {
     }
 
 
-	void Update () {
+	void Update() {
         Vector3 targetPosition = cameraLookTarget.position + localPlayer.transform.forward * cameraOffset.z + 
             localPlayer.transform.up * cameraOffset.y + 
             localPlayer.transform.right * cameraOffset.x;
