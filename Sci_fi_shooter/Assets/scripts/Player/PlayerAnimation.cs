@@ -17,5 +17,7 @@ public class PlayerAnimation : MonoBehaviour {
         animator.SetFloat("Horizontal", GameManager.Instance.InputController.Horizontal);
 
         animator.SetBool("IsWalking", GameManager.Instance.InputController.IsWalking);
+        animator.SetBool("IsSprinting", GameManager.Instance.InputController.IsSprinting);
+
     }
 }

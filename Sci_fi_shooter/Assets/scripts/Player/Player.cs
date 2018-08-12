@@ -63,8 +63,10 @@ public class Player : MonoBehaviour {
         float moveSpeed = runSpeed;
         if (playerInput.IsWalking)
             moveSpeed = walkSpeed;
+        if (playerInput.IsSprinting)
+            moveSpeed = sprintSpeed;
 
-        Vector2 direction = new Vector2(playerInput.Vertical * runSpeed, playerInput.Horizontal * runSpeed);
+        Vector2 direction = new Vector2(playerInput.Vertical * moveSpeed, playerInput.Horizontal * moveSpeed);
         MoveController.Move(direction);
     }
 
