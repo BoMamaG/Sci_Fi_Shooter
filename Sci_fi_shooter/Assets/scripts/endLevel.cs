@@ -17,7 +17,7 @@ public class endLevel : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.tag == "Player")
+        if(col.tag == "soldier")
         {
             print("fdfds");
             SceneManager.LoadScene(newGameScene);
