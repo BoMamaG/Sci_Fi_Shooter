@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sci_fi_shooter.unity
     guid: 3ab2fe495a4f25541815f2db072c6d3a
+  - enabled: 1
+    path: Assets/Scenes/victory_screen.unity
+    guid: 10455eac7f24e8b4abe1d8b08998a352
