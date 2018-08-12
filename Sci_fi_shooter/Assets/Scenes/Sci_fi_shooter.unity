@@ -30274,10 +30274,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9afc071cd3404d443bed17b9011e1e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  runSpeed: 5
+  walkSpeed: 2
+  sprintSpeed: 0
+  crouchSpeed: 0
   MouseControl:
     Damping: {x: 10, y: 8}
     Sensitivity: {x: 5, y: 6}
+    LockMouse: 0
 --- !u!4 &1071505202
 Transform:
   m_ObjectHideFlags: 0
